@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Big Mart Sales Prediction - Result</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+      body {
+        background: linear-gradient(to left, #667292 0%, #a2b9bc 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+      .result-card {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin-top: 20px;
+      }
+      .prediction-box {
+        background: #4CAF50;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 20px 0;
+      }
+      .input-details {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      .back-button {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="result-card">
+            <h2 class="text-center mb-4">
+              <i class="fas fa-chart-line"></i> Sales Prediction Result
+            </h2>
+            
+            <div class="prediction-box">
+              <h3>Predicted Sales</h3>
+              <h2 class="display-4">₹{{ "%.2f"|format(result.prediction) }}</h2>
+            </div>
+
+            <div class="input-details">
+              <h4 class="mb-3">Input Details</h4>
+              <div class="row">
+                <div class="col-md-6">
+                  <p><strong>Item Weight:</strong> {{ result.item_weight }}</p>
+                  <p><strong>Item Fat Content:</strong> {{ result.item_fat_content }}</p>
+                  <p><strong>Item Visibility:</strong> {{ result.item_visibility }}</p>
+                  <p><strong>Item Type:</strong> {{ result.item_type }}</p>
+                </div>
+                <div class="col-md-6">
+                  <p><strong>Item MRP:</strong> ₹{{ result.item_mrp }}</p>
+                  <p><strong>Establishment Year:</strong> {{ result.outlet_establishment_year }}</p>
+                  <p><strong>Outlet Size:</strong> {{ result.outlet_size }}</p>
+                  <p><strong>Outlet Location:</strong> {{ result.outlet_location_type }}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center back-button">
+              <a href="/" class="btn btn-primary">
+                <i class="fas fa-arrow-left"></i> Make Another Prediction
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html> 
